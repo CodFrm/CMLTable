@@ -1,0 +1,76 @@
+.cmltable {
+    width: 100%;
+    border: 1px solid #D5D5D5;
+    border-spacing: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+
+.cmltable tr > th {
+    background-color: rgb(238, 238, 238);
+    font-weight: 400;
+    text-align: left;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.cmltable tr > td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.cmltable th,
+.cmltable td {
+    height: 30px;
+}
+
+.cmltable-check {
+    padding-left: 2px;
+    margin-left: 4px;
+    height: 18px;
+    width: 16px;
+    font-weight: bold;
+    color: #20ABD9;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border: 1px solid #C6C5C5;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.cmltable-select {
+    margin: 4px 0;
+    min-width: 100px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #D5D5D5;
+    user-select: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+
+.cmltable-select:focus {
+    box-shadow: 0 0 1px #3DA3FF;
+}
+
+.cmltable-btn{
+	outline: none;
+	border: 1px solid #D5D5D5;
+	width: 60px;
+	height: 30px;
+	background-color: #FFFFFF;
+	cursor: pointer;
+	border-radius: 2px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+.cmltable-btn:active{
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.cmltable-search{
+	float: right;
+}
+.cmltable-search-edit{
+	padding: 0;
+	padding-left: 4px;
+	margin:0;
+}

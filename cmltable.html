@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>CML表格 演示</title>
+    <link rel="stylesheet" href="cmltable/cmltable.css" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="cmltable/cmltable.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        
+    </div>
+    <div class="article">
+                <select class="cmltable-select">
+                    <option value="1">编辑</option>
+                    <option value="2">删除</option>
+                    <option value="3">永久删除</option>
+                </select>
+
+                <button class="cmltable-btn">确定</button>
+                <div class="cmltable-search">
+                    <input type="text" class="cmltable-select cmltable-search-edit" />
+                    <button class="cmltable-btn">搜索</button>
+                </div>
+                <table class="cmltable">
+                    <tr>
+                        <th style="width: 40px;"><div class="cmltable-check"></div></th>
+                        <th>标题</th>
+                        <th>作者</th>
+                        <th>分类</th>
+                        <th>标签</th>
+                        <th>发表时间</th>
+                     </tr> 
+                     <tr>
+                        <td><div class="cmltable-check"></div></td>
+                        <td>第1</td>
+                        <td>第2</td>
+                        <td>第3</td>
+                        <td>第4</td>
+                        <td>第5</td>
+                     </tr>
+                     <tr>
+                        <td><div class="cmltable-check"></div></td>
+                        <td>第1</td>
+                        <td>第2</td>
+                        <td>第3</td>
+                        <td>第4</td>
+                        <td>第5</td>
+                     </tr>
+                     <tr>
+                        <th><div class="cmltable-check"></div></th>
+                        <th>标题</th>
+                        <th>作者</th>
+                        <th>分类</th>
+                        <th>标签</th>
+                        <th>发表时间</th>
+                     </tr> 
+                </table>
+            </div>
+</body>
+<script>
+$('#test').createCMLTable({
+    url:'http://127.0.0.1/controller.php',
+    action:[{
+        action:'delete',
+        title:'删除'
+    },{
+        action:'absdelete',
+        title:'永久删除'
+    }
+    ],
+    columns: [{
+        checkbox: true
+    }, {
+        field: 'uid',
+        title: 'UID',
+    },{
+        field:'user',
+        title:'用户名'
+    }]
+});
+
+</script>
+
+</html>

@@ -13,72 +13,36 @@
     <div id="test">
         
     </div>
-    <div class="article">
-                <select class="cmltable-select">
-                    <option value="1">编辑</option>
-                    <option value="2">删除</option>
-                    <option value="3">永久删除</option>
-                </select>
-
-                <button class="cmltable-btn">确定</button>
-                <div class="cmltable-search">
-                    <input type="text" class="cmltable-select cmltable-search-edit" />
-                    <button class="cmltable-btn">搜索</button>
-                </div>
-                <table class="cmltable">
-                    <tr>
-                        <th style="width: 40px;"><div class="cmltable-check"></div></th>
-                        <th>标题</th>
-                        <th>作者</th>
-                        <th>分类</th>
-                        <th>标签</th>
-                        <th>发表时间</th>
-                     </tr> 
-                     <tr>
-                        <td><div class="cmltable-check"></div></td>
-                        <td>第1</td>
-                        <td>第2</td>
-                        <td>第3</td>
-                        <td>第4</td>
-                        <td>第5</td>
-                     </tr>
-                     <tr>
-                        <td><div class="cmltable-check"></div></td>
-                        <td>第1</td>
-                        <td>第2</td>
-                        <td>第3</td>
-                        <td>第4</td>
-                        <td>第5</td>
-                     </tr>
-                     <tr>
-                        <th><div class="cmltable-check"></div></th>
-                        <th>标题</th>
-                        <th>作者</th>
-                        <th>分类</th>
-                        <th>标签</th>
-                        <th>发表时间</th>
-                     </tr> 
-                </table>
-            </div>
 </body>
 <script>
-$('#test').createCMLTable({
+var Table=$('#test').createCMLTable({
     url:'http://127.0.0.1/controller.php',
+    keyID:'auth',
     action:[{
         action:'delete',
-        title:'删除'
+        title:'删除',
+        func: function(obj){
+        	$.ajax({
+        		url: 'http://127.0.0.1/controller.php',
+        		type: 'post',
+        		data: obj.getSelect()
+        	})
+        	.done(function() {
+        		obj.refresh();
+        	});
+        	
+        }
     },{
         action:'absdelete',
         title:'永久删除'
-    }
-    ],
+    }],
     columns: [{
         checkbox: true
     }, {
-        field: 'uid',
+        field: 'auth',
         title: 'UID',
     },{
-        field:'user',
+        field:'title',
         title:'用户名'
     }]
 });
